@@ -11,7 +11,7 @@ public class NumberWizard : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
+		StartGame();
 	}
 	void StartGame()
 	{
