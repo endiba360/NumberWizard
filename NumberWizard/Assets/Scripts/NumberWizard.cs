@@ -13,7 +13,7 @@ public class NumberWizard : MonoBehaviour {
 	{
 		
 	}
-	void StarGame()
+	void StartGame()
 	{
 		Debug.Log("Welcome to Number Wizard");
 		Debug.Log("Think in a Number, do not tell me yet!!!!");
