@@ -3,18 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NumberWizard : MonoBehaviour {
-
-	int max = 1000;
-	int min = 1;
-	int guess = 500;
-
+	int max;
+	int min;
+	int guess;
 	// Use this for initialization
 	void Start () 
 	{
 		StartGame();
 	}
+// Update is called once per frame
+	void Update () 
+	{
+		if(Input.GetKeyDown(KeyCode.UpArrow))
+		{
+			min = guess;
+			NextGuess();
+	
+		}else if(Input.GetKeyDown(KeyCode.DownArrow)){		
+			max = guess;
+			NextGuess();
+		
+		}else if(Input.GetKeyDown(KeyCode.Return)){
+			Debug.Log("I got it!!! Your number is "+ guess);
+			StartGame();
+		}
+	}
 	void StartGame()
 	{
+		max = 1000;
+		min = 1;
+		guess = 500;
+
 		Debug.Log("Welcome to Number Wizard");
 		Debug.Log("Think in a Number, do not tell me yet!!!!");
 		Debug.Log("The min number you can think is " + min);
@@ -24,22 +43,9 @@ public class NumberWizard : MonoBehaviour {
 		Debug.Log("Did you think in... "+ guess);
 		max = max + 1;
 	}
-	// Update is called once per frame
-	void Update () 
+	void NextGuess()
 	{
-		if(Input.GetKeyDown(KeyCode.UpArrow))
-		{
-			min = guess;
-			guess = (max+min) / 2;
-			Debug.Log("Did you think in... "+ guess);
-	
-		}else if(Input.GetKeyDown(KeyCode.DownArrow)){		
-			max = guess;
-			guess = (max + min) / 2;
-			Debug.Log("Did you think in... "+ guess);
-		
-		}else if(Input.GetKeyDown(KeyCode.Return)){
-			Debug.Log("I got it!!! Your number is "+ guess);
-		}
+		guess = (max+min) / 2;
+		Debug.Log("Did you think in... "+ guess);
 	}
 }
