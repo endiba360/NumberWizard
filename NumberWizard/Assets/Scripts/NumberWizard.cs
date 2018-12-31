@@ -9,8 +9,12 @@ public class NumberWizard : MonoBehaviour {
 	int guess = 500;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		
+	}
+	void StarGame()
+	{
 		Debug.Log("Welcome to Number Wizard");
 		Debug.Log("Think in a Number, do not tell me yet!!!!");
 		Debug.Log("The min number you can think is " + min);
@@ -19,12 +23,10 @@ public class NumberWizard : MonoBehaviour {
 		Debug.Log("---------------------------------------");
 		Debug.Log("Did you think in... "+ guess);
 		max = max + 1;
-	
 	}
-	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update () 
+	{
 		if(Input.GetKeyDown(KeyCode.UpArrow))
 		{
 			min = guess;
@@ -38,7 +40,6 @@ public class NumberWizard : MonoBehaviour {
 		
 		}else if(Input.GetKeyDown(KeyCode.Return)){
 			Debug.Log("I got it!!! Your number is "+ guess);
-
 		}
 	}
 }
